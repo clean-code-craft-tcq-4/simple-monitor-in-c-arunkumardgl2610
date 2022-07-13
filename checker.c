@@ -39,8 +39,6 @@ int batteryIsOk(void)
   }
 }
 
-
-
 int main() 
 {
   int battery_status = 0;
