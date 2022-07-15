@@ -5,7 +5,7 @@ int temperature_status=0, soc_Status=0,charge_status =0;
 
 void batteryIsOk(int temp_status, int sofc_status, int charg_status) 
 {  
-  if(temperature_status == 1 || soc_Status == 1 || charge_status == 1)
+  if(temp_status == 1 || sofc_status == 1 || charg_status == 1)
   {
     printf("Battery status is not in range!\n");
   }
