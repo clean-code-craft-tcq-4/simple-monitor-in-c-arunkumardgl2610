@@ -13,7 +13,7 @@ int battery_parametertest(float para1,float para2,float para3)
 int main() 
 {
   int Bat_Status =0;
-  Bat_Status = battery_parametertest(25,70,0.7)
+  Bat_Status = battery_parametertest(25,70,0.7);
   if(Bat_Status==1)
   {
     printf("Battery status is not in range!\n");
