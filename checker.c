@@ -3,9 +3,20 @@
 #include "parameter_check.h"
 int temperature_status=0, soc_Status=0,charge_status =0;
 
-void batteryIsOk(int temp, int sofc, int charg) 
+void parametertype1_status(int temp_status, int sofc_status)
+{
+  if(temp_status == 1||sofc_status == 1)
+  {
+    printf("Battery status is not in range!\n");
+  }
+  else
+  {
+    printf("Battery status is good condition\n");
+  }
+}
+void parametertype2_status(int charg_status) 
 {  
-  if(temp == 1||sofc == 1||charg==1)
+  if(charg_status==1)
   {
     printf("Battery status is not in range!\n");
   }
@@ -18,8 +29,10 @@ void batteryIsOk(int temp, int sofc, int charg)
 int main() 
 {
   int battery_status = 0;
-  temperature_status = check_Parameter1(0,45,25);
-  soc_Status = check_Parameter1(20,80,70);
-  charge_status = check_Parameter2(0.8,0.7);
-  batteryIsOk(temperature_status,soc_Status,charge_status);     
+  temperature_status = check_Parametertype1(0,45,25);
+  soc_Status = check_Parametertype1(20,80,70);
+  charge_status = check_Parametertype2(0.8,0.7);
+  parametertype1_status(temperature_status,soc_Status);
+  parametertype2_status(charge_status);
+  
 }
