@@ -1,39 +1,20 @@
 #include <stdio.h>
 #include <assert.h>
 #include "parameter_check.h"
-int temperature_status=0, soc_Status=0,charge_status =0;
-
-void parametertype1_status(int temp_status, int sofc_status)
+int temperature_status=0, soc_Status=0,charge_status =0,battery_status=0;
+int battery_parametertest(float para1,float para2,float para3) 
 {
-  if(temp_status == 1||sofc_status == 1)
-  {
-    printf("Battery status is not in range!\n");
-  }
-  else
-  {
-    printf("Battery status is good condition\n");
-  }
+  temperature_status = check_Parametertype1(0,45,para1);
+  soc_Status = check_Parametertype1(20,80,para2);
+  charge_status = check_Parametertype2(0.8,para3);
+  battery_status = (temperature_status | charge_status | soc_Status);
+  return battery_status;
 }
-void parametertype2_status(int charg_status) 
-{  
-  if(charg_status==1)
-  {
-    printf("Battery status is not in range!\n");
-  }
-  else
-  {
-    printf("Battery status is good condition\n");
-  }
-}
-
 int main() 
 {
-  int battery_status = 0;
-  temperature_status = check_Parametertype1(0,45,25);
-  soc_Status = check_Parametertype1(20,80,70);
-  charge_status = check_Parametertype2(0.8,0.7);
-  battery_status = (temperature_status | charge_status | soc_Status);
-  if(battery_status==1)
+  int Bat_Status =0;
+  Bat_Status = battery_parametertest(25,70,0.7)
+  if(Bat_Status==1)
   {
     printf("Battery status is not in range!\n");
   }
