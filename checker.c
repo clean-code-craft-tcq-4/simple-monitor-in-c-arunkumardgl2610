@@ -32,7 +32,13 @@ int main()
   temperature_status = check_Parametertype1(0,45,25);
   soc_Status = check_Parametertype1(20,80,70);
   charge_status = check_Parametertype2(0.8,0.7);
-  parametertype1_status(temperature_status,soc_Status);
-  parametertype2_status(charge_status);
-  
+  battery_status = (temperature_status | charge_status | soc_Status);
+  if(battery_status==1)
+  {
+    printf("Battery status is not in range!\n");
+  }
+  else
+  {
+    printf("Battery status is good condition\n");
+  }
 }
