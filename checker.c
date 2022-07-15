@@ -20,6 +20,5 @@ int battery_parametertest(float para1,float para2,float para3)
 }
 int main() 
 {
-  assert(battery_parametertest(25, 70, 0.7));
   assert(!battery_parametertest(50, 85, 0));
 }
