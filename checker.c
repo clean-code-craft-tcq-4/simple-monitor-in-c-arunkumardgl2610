@@ -3,9 +3,9 @@
 #include "parameter_check.h"
 int temperature_status=0, soc_Status=0,charge_status =0;
 
-void batteryIsOk(int temp_status, int sofc_status, int charg_status) 
+void batteryIsOk(int temp, int sofc, int charg) 
 {  
-  if(temp_status == 1 || sofc_status == 1)
+  if(temp == 1||sofc == 1||charg==1)
   {
     printf("Battery status is not in range!\n");
   }
