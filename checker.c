@@ -2,7 +2,7 @@
 #include <assert.h>
 #include "parameter_check.h"
 int temperature_status=0, soc_Status=0,charge_status =0,battery_status=0;
-void battery_parametertest(float para1,float para2,float para3) 
+int battery_parametertest(float para1,float para2,float para3) 
 {
   temperature_status = check_Parametertype1(0,45,para1);
   soc_Status = check_Parametertype1(20,80,para2);
