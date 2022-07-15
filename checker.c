@@ -11,14 +11,16 @@ int battery_parametertest(float para1,float para2,float para3)
   if(battery_status==1)
   {
     printf("Battery status is not in range!\n");
+    return 0;
   }
   else
   {
     printf("Battery status is good condition\n");
+    return 1;
   }
-  return battery_status;
 }
 int main() 
 {
+  assert(battery_parametertest(25, 70, 0.7));
   assert(!battery_parametertest(50, 85, 0));
 }
