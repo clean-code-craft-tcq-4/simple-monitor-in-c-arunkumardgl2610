@@ -35,6 +35,7 @@ int batteryIsInGoodCondition(float para1,float para2,float para3)
   }
 }
 int main() 
+{
 lang = 1;
   assert(batteryIsInGoodCondition(25, 70, 0.7));
   assert(!batteryIsInGoodCondition(50, 85, 0));
