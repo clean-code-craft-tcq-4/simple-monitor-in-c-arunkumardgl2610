@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <assert.h>
 #include "parameter_check.h"
-int temperature_status=0, soc_Status=0,charge_status =0,battery_status=0;
-int batteryIsInGoodCondition(float para1,float para2,float para3,char lang) 
+int temperature_status=0, soc_Status=0,charge_status =0,battery_status=0,lang=0;
+int batteryIsInGoodCondition(float para1,float para2,float para3) 
 {
   temperature_status = checkAgainstMaxMinRange(0,45,para1);
   soc_Status = checkAgainstMaxMinRange(20,80,para2);
@@ -35,11 +35,12 @@ int batteryIsInGoodCondition(float para1,float para2,float para3,char lang)
   }
 }
 int main() 
-{
-  assert(batteryIsInGoodCondition(25, 70, 0.7,1));
-  assert(!batteryIsInGoodCondition(50, 85, 0,2));
-  assert(!batteryIsInGoodCondition(60, 15, 0.9,1));
-  assert(batteryIsInGoodCondition(25, 40, 0.4,2));
-  assert(!batteryIsInGoodCondition(43, 78, 0.9,1));
-  assert(batteryIsInGoodCondition(25, 79, 0.6,2));
+lang = 1;
+  assert(batteryIsInGoodCondition(25, 70, 0.7));
+  assert(!batteryIsInGoodCondition(50, 85, 0));
+  assert(!batteryIsInGoodCondition(60, 15, 0.9));
+lang =2;
+  assert(batteryIsInGoodCondition(25, 40, 0.4));
+  assert(!batteryIsInGoodCondition(43, 78, 0.9));
+  assert(batteryIsInGoodCondition(25, 79, 0.6));
 }
