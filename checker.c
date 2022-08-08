@@ -5,7 +5,7 @@ int temperature_status=0, soc_Status=0,charge_status =0,battery_status=0;
 int batteryIsInGoodCondition(float para1,float para2,float para3) 
 {
   temperature_status = checkAgainstMaxMinRange(0,45,para1);
-  soc_Status = checkAgainstwarnMaxMinRange(20,80,para2);
+  checkAgainstwarnMaxMinRange(20,80,para2);
   charge_status = checkAgainstMaxRange(0.8,para3);
   battery_status = (temperature_status | charge_status | soc_Status);
   if(battery_status==1)
