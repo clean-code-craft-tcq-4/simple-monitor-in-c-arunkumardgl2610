@@ -31,19 +31,19 @@ void checkAgainstwarnMaxMinRange(float min1, float max1, float Parameter_value1)
     {
      printf("Low SOC breach\n");   
     }
-    if( Parameter_value1 > min1 && Parameter_value1 <= war_min)
+    else if( Parameter_value1 > min1 && Parameter_value1 <= war_min)
     {
      printf("LOW_SOC_WARNING\n");   
     }
-    if( Parameter_value1 > war_min && Parameter_value1 < war_max)
+    else if( Parameter_value1 > war_min && Parameter_value1 < war_max)
     {
      printf("NORMAL\n");   
     }
-    if( Parameter_value1 >= war_max && Parameter_value1 < max1)
+    else if( Parameter_value1 >= war_max && Parameter_value1 < max1)
     {
      printf("HIGH_SOC_WARNING\n");   
     }
-    if( Parameter_value1 > max1)
+    else if( Parameter_value1 > max1)
     {
      printf("HIGH_SOC_BREACH\n");   
     }
