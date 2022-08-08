@@ -21,7 +21,7 @@ int checkAgainstMaxRange(float max2, float Parameter_value2)
   }
 }
 
-int checkAgainstwarnMaxMinRange(float min1, float max1, float Parameter_value1)
+void checkAgainstwarnMaxMinRange(float min1, float max1, float Parameter_value1)
 {
     int war_min = 0,war_max = 0, war_Per=0;
     war_Per = min1/5;
