@@ -10,12 +10,12 @@ int batteryIsInGoodCondition(float para1,float para2,float para3)
   battery_status = (temperature_status | charge_status | soc_Status);
   if(battery_status == 1) 
   {
-  printf("Battery status is not in range!\n");}
+  printf("Battery status is not in range!\n");
   return 0;
   }
   else
   {
-   printf("Battery status is good condition\n");}
+   printf("Battery status is good condition\n");
    return 1;
   }
 }
