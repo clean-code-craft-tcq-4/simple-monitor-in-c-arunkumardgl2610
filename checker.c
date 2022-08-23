@@ -8,7 +8,7 @@ int batteryIsInGoodCondition(float para1,float para2,float para3)
   soc_Status = checkAgainstMaxMinRange(20,80,para2);
   charge_status = checkAgainstMaxRange(0.8,para3);
   battery_status = (temperature_status | charge_status | soc_Status);
-  overall_status = display_status(battery_status);
+  overall_status = display_status(battery_status,lang);
   return overall_status;
 }
 int main() 
