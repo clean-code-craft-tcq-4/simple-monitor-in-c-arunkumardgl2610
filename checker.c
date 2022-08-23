@@ -9,14 +9,7 @@ int batteryIsInGoodCondition(float para1,float para2,float para3)
   charge_status = checkAgainstMaxRange(0.8,para3);
   battery_status = (temperature_status | charge_status | soc_Status);
   display_status(battery_status);
-  if(battery_status==1)
-  {
-    return 0;
-  }
-  else
-  {
-    return 1;
-  }
+return battery_status;
 }
 void display_status(int battery_status_display)
 {
@@ -25,7 +18,8 @@ void display_status(int battery_status_display)
     if(lang == 1)
     printf("Battery status is not in range!\n");
     else
-    printf("Batteriestatus ist nicht im Bereich!\n");  
+    printf("Batteriestatus ist nicht im Bereich!\n"); 
+    
   }
   else
   {
