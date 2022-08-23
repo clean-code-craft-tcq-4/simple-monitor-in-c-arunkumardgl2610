@@ -13,16 +13,12 @@ int batteryIsInGoodCondition(float para1,float para2,float para3)
 }
 int display_status(int battery_status_display)
 {if(battery_status_display == 1) 
-  {if(lang == 1){
-    printf("Battery status is not in range!\n");}
-    else{
-    printf("Batteriestatus ist nicht im Bereich!\n");}
+  {if(lang == 1){printf("Battery status is not in range!\n");}
+    else{printf("Batteriestatus ist nicht im Bereich!\n");}
     return 0;}
   else{
-    if(lang == 1){
-    printf("Battery status is good condition\n");}
-    else{
-    printf("Batteriestatus ist guter Zustand\n"); }
+    if(lang == 1){printf("Battery status is good condition\n");}
+    else{printf("Batteriestatus ist guter Zustand\n"); }
     return 1;}
 }
 int main() 
