@@ -1,3 +1,4 @@
+extern lang=0;
 int checkAgainstMaxMinRange(float min1, float max1, float Parameter_value1)
 {if(Parameter_value1 < min1 || Parameter_value1 > max1)
   {return 1;}
